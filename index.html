@@ -12,7 +12,7 @@
 <body class="wholePage">
     <div class="wrapper">
         <div class="block">
-            <textarea class="answer" id="answer" rows="3" cols="40" disabled="disabled"></textarea>
+            <textarea class="answer" id="answer" rows="3" cols="40" readonly="readonly"></textarea>
         </div>
 
         <div class="block">
@@ -69,101 +69,7 @@
             </div>
         </div>
     </div>
-    <!--Calculator script-->
-    <script>
-        //global variables
-        const total = document.getElementById('answer');
-        var numberInput = document.getElementById('numberInput').innerHTML;
+    <script src="calculator.js"></script>
 
-        //global functions
-        function doKeyAction(event) {
-            var event = event.which || event.keyCode;
-            if (event == 13) {
-                //do calculation
-                alert('Enter was pressed');
-            }
-        }
-
-        $(document).keydown(function (e) {
-            switch (e.keyCode) {
-                case 42:
-                    Multiply(numberInput);
-                    break;
-                case 43:
-                    Add(numberInput);
-                    break;
-                case 45:
-                    Subtract(numberInput);
-                    break;
-                case 46:
-                    //do .
-                    break;
-                case 47:
-                    Divide(numberInput);
-                    break;
-                case 48:
-                    //do 0
-                    break;
-                case 49:
-                    //do 9
-                    break;
-                case 50:
-                    //do 8
-                    break;
-                case 51:
-                    //do 7
-                    break;
-                case 52:
-                    //do 6
-                    break;
-                case 53:
-                    //do 5
-                    break;
-                case 54:
-                    //do 4
-                    break;
-                case 55:
-                    //do 3
-                    break;
-                case 56:
-                    //do 2
-                    break;
-                case 57:
-                    //do 1
-                    break;
-                case 13:
-                    //do enter/equals
-                    break;
-            }
-
-
-            // if (e.keyCode == 13)
-            //     $("body").append("<p>Enter pressed without focus</p>");
-        });
-
-        //add function
-        function Add(numberInput) {
-            total.innerHTML = numberInput + "+";
-        }
-
-        //subtract function
-        function Subtract(numberInput) {
-            total.innerHTML = numberInput + "-";
-        }
-
-        //multiply function
-        function Multiply(numberInput) {
-            total.innerHTML = numberInput + "*";
-        }
-
-        //divide function
-        function Divide(numberInput) {
-            total.innerHTML = numberInput + "/";
-        }
-
-        //clear/reset function
-
-
-    </script>
 </body>
 </html>
