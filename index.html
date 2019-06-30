@@ -1,5 +1,5 @@
-<!DOCTYPE html>
-
+﻿<!DOCTYPE html>
+<html>
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -63,6 +63,7 @@
     <script>
         //global variables
         const total = document.getElementById('answer');
+        var numberInput = document.getElementById('numberInput').innerHTML;
 
         //global functions
         function doKeyAction(event) {
@@ -76,19 +77,19 @@
         $(document).keydown(function (e) {
             switch (e.keyCode) {
                 case 42:
-                    //do multiply
+                    Multiply(numberInput);
                     break;
                 case 43:
-                    //do add
+                    Add(numberInput);
                     break;
                 case 45:
-                    //do subtract
+                    Subtract(numberInput);
                     break;
                 case 46:
                     //do .
                     break;
                 case 47:
-                    //do divide
+                    Divide(numberInput);
                     break;
                 case 48:
                     //do 0
@@ -131,17 +132,28 @@
         });
 
         //add function
+        function Add(numberInput) {
+            total.innerHTML = numberInput + "+";
+        }
 
         //subtract function
+        function Subtract(numberInput) {
+            total.innerHTML = numberInput + "-";
+        }
 
         //multiply function
+        function Multiply(numberInput) {
+            total.innerHTML = numberInput + "*";
+        }
 
         //divide function
+        function Divide(numberInput) {
+            total.innerHTML = numberInput + "/";
+        }
 
         //clear/reset function
 
 
     </script>
 </body>
-
 </html>
