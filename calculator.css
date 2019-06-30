@@ -21,9 +21,6 @@
     overflow: auto;
     padding: 5px;
     background-color: #3c3c3c;
-}
-
-.wrapper{
     border:2px solid black;
 }
 
@@ -71,8 +68,25 @@
 .decimalButton,
 .number0Button,
 .equalsButton{
-    background-color:#3c3c3c !important;
+    background-color:#3c3c3c;
     color:#fff;
     font-weight:normal;
     font-size:20px;
+}
+.numberButton:hover,
+.operatorButton:hover,
+.decimalButton:hover,
+.number0Button:hover,
+.equalsButton:hover{
+    background-color:rgba(0,0,0,0.7);
+
+}
+
+.numberButton:active,
+.operatorButton:active,
+.decimalButton:active,
+.number0Button:active,
+.equalsButton:active{
+    background-color:rgba(0,0,0,1);
+
 }
