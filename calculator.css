@@ -1,0 +1,30 @@
+.html{
+    background-color:black;
+}
+
+.block{
+    display:block;
+}
+
+.numberInput,
+.answer{
+    border:2px solid black;
+}
+
+.numberInput{
+    height:50px;
+    line-height:50px;
+    font-size:40px;
+    width:280px;
+    text-align:right;
+    padding:0 10px;
+}
+
+.numberButton{
+    /*make them large and not so generic looking. no border. big and bold text*/
+}
+
+.equalsButton{
+    /*make very large. decide if you want it tall and narrow or short and wide*/
+    /*apply same styles as number buttons except for the dimensions*/
+}
