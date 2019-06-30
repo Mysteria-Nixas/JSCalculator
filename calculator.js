@@ -1,24 +1,18 @@
 const total = document.getElementById('answer');
 const numberInputField = document.getElementById('numberInput');
 var answer = 0;
+var previousOperation = "";
 
 //global functions
 function doKeyAction(e) {
-    //var event = e.which || e.keyCode;
-    //if (event === 13) {
-    //    //do calculation
-    //    alert('Enter was pressed');
-    //}
     Switch(e, document.getElementById('numberInput').value);
     console.log("Which: " + e.which + " KeyCode: " + e.keyCode);
 }
 
 $(document).keydown(function (e) {
     console.log("Which: " + e.which + " KeyCode: " + e.keyCode);
-
     Switch(e, document.getElementById('numberInput').value);
-     //if (e.keyCode === 13)
-     //    $("body").append("<p>Enter pressed without focus</p>");
+    FocusCursor();
 });
 
 function Switch(e, numberInput) {
@@ -26,14 +20,17 @@ function Switch(e, numberInput) {
     switch (event) {
         case 106:
             console.log(event);
+            previousOperation = "Multiply";
             Multiply(numberInput);
             break;
         case 107:
             console.log(event);
+            previousOperation = "Add";
             Add(numberInput);
             break;
         case 109:
             console.log(event);
+            previousOperation = "Subtract";
             Subtract(numberInput);
             break;
         case 110:
@@ -42,6 +39,7 @@ function Switch(e, numberInput) {
             break;
         case 111:
             console.log(event);
+            previousOperation = "Divide";
             Divide(numberInput);
             break;
         case 105:
@@ -87,43 +85,75 @@ function Switch(e, numberInput) {
         case 13:
             console.log(event);
             //do enter/equals
+            Equals(numberInput);
             break;
     }
 }
 
 //add function
 function Add(numberInput) {
-    total.value += numberInput + " + ";
+    total.value += +numberInput + " + ";
     FocusCursor();
-    answer = answer + numberInput;
+    answer = +answer + +numberInput;
+    UpdateAnswer(answer);
+    //previousOperation = "Add";
 }
 
 //subtract function
 function Subtract(numberInput) {
-    total.innerHTML += numberInput + " - ";
+    total.value += numberInput + " - ";
     FocusCursor();
-    answer = answer - numberInput;
+    answer = +answer - +numberInput;
+    UpdateAnswer(answer);
+    //previousOperation = "Subtract";
 }
 
 //multiply function
 function Multiply(numberInput) {
-    total.innerHTML += numberInput + " * ";
+    total.value += numberInput + " * ";
     FocusCursor();
-    answer = answer * numberInput;
+    answer = +answer * +numberInput;
+    UpdateAnswer(answer);
+    //previousOperation = "Multiply";
 }
 
 //divide function
 function Divide(numberInput) {
-    total.innerHTML += numberInput + " / ";
+    total.value += numberInput + " / ";
     FocusCursor();
-    answer = answer / numberInput;
+    answer = +answer / +numberInput;
+    UpdateAnswer(answer);
+    //previousOperation = "Divide";
 }
 
 //total up the answer and display the final result
-function Equals() {
-    //do equals stuff here
-    total.innerHTML += " = " + answer;
-    FocusCursor();
+function Equals(numberInput) {
+    //perform the final operation before updating the answer
+    switch (previousOperation) {
+        case "Add":
+            Add(numberInput);
+            break;
+        case "Subtract":
+            Subtract(numberInput);
+            break;
+        case "Multiply":
+            Multiply(numberInput);
+            break;
+        case "Divide":
+            Divide(numberInput);
+            break;
+
+    }
+
+    //UpdateAnswer(answer); 
+    total.value += " = " + answer;
+    ClearInput();
+    FocusCursor();    
+}
+
+//update the running total so when the Equals function is called, it has the last value entered included in the calculation
+function UpdateAnswer(a) {
+    answer = a;
 }
 
 //clear/reset function
