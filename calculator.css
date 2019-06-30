@@ -1,13 +1,29 @@
+
+
 .html{
     background-color:black;
 }
 
 .block{
     display:block;
+    margin-top:2px;
+}
+
+.wrapper{
+    display:block;
+    margin-left:auto;
+    margin-right:auto;
+    width:500px;
+    height:auto;
+    overflow:auto;
+    padding:5px;
 }
 
 .numberInput,
 .answer{
+    
+}
+.wrapper{
     border:2px solid black;
 }
 
@@ -15,7 +31,7 @@
     height:50px;
     line-height:50px;
     font-size:40px;
-    width:280px;
+    width:33%;
     text-align:right;
     padding:0 10px;
 }
@@ -27,4 +43,6 @@
 .equalsButton{
     /*make very large. decide if you want it tall and narrow or short and wide*/
     /*apply same styles as number buttons except for the dimensions*/
+    width: 60px;
+    text-align:center;
 }
