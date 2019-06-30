@@ -16,16 +16,17 @@
     display: block;
     margin-left: auto;
     margin-right: auto;
-    width: 252px;
-    height: auto;
+    width: 300px;
+    height: 410px;
     overflow: auto;
     padding: 5px;
-    background-color: #3c3c3c;
+    background-image: url("IMG_0810.JPG");
     border:2px solid black;
+    text-align:center;
 }
 
 .answer{
-    display:block;
+    display:inline-block;
     width:248px;
 
 }
@@ -40,7 +41,9 @@
 }
 
 .numberWrapper{
+    display:inline-block;
     float:left;
+    padding-left:24px;
 }
 .numberButton,
 .operatorButton,
@@ -60,7 +63,7 @@
     width: 60px;
     height: 155px;
     text-align:center;
-    margin-left:4px;
+    margin-left:-20px;
 }
 
 .numberButton,
