@@ -1,4 +1,5 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
+<html>
 
 <head>
     <meta charset="utf-8">
@@ -12,7 +13,7 @@
 <body class="wholePage">
     <div class="wrapper">
         <div class="block">
-            <textarea class="answer" id="answer" rows="3" cols="40" disabled="disabled"></textarea>
+            <textarea class="answer" id="answer" rows="3" cols="40" readonly="readonly"></textarea>
         </div>
 
         <div class="block">
@@ -54,105 +55,26 @@
                     <button type="button" class="numberButton" id="3">3</button>
                     <!--55-->
                 </div>
+            </div>
+            <div class="equalWrapper">
+                <div class="block">
+                    <button type="button" class="equalsButton" id="equalsButton">=</button>
+                    <!--13-->
+                </div>
+            </div>
+            <div class bottomRowWrapper>
                 <div class="block">
                     <button type="button" class="number0Button" id="0">0</button>
                     <!--48-->
                     <button type="button" class="decimalButton" id="decimalButton">.</button>
                     <!--46 = .-->
+                    <button type="button" class="clearButton" id="0">C</button>
                 </div>
             </div>
         </div>
-        <div class="equalWrapper">
-            <div class="block">
-                <button type="button" class="equalsButton" id="equalsButton">=</button>
-                <!--13-->
-            </div>
-        </div>
     </div>
-    </div>
-    <!--Calculator script-->
-    <script>
-        //global variables
-        const total = document.getElementById('answer');
+    <script src="calculator.js"></script>
 
-        //global functions
-        function doKeyAction(event) {
-            var event = event.which || event.keyCode;
-            if (event == 13) {
-                //do calculation
-                alert('Enter was pressed');
-            }
-        }
-
-        $(document).keydown(function (e) {
-            switch (e.keyCode) {
-                case 42:
-                    //do multiply
-                    break;
-                case 43:
-                    //do add
-                    break;
-                case 45:
-                    //do subtract
-                    break;
-                case 46:
-                    //do .
-                    break;
-                case 47:
-                    //do divide
-                    break;
-                case 48:
-                    //do 0
-                    break;
-                case 49:
-                    //do 9
-                    break;
-                case 50:
-                    //do 8
-                    break;
-                case 51:
-                    //do 7
-                    break;
-                case 52:
-                    //do 6
-                    break;
-                case 53:
-                    //do 5
-                    break;
-                case 54:
-                    //do 4
-                    break;
-                case 55:
-                    //do 3
-                    break;
-                case 56:
-                    //do 2
-                    break;
-                case 57:
-                    //do 1
-                    break;
-                case 13:
-                    //do enter/equals
-                    break;
-            }
-
-
-            // if (e.keyCode == 13)
-            //     $("body").append("<p>Enter pressed without focus</p>");
-        });
-
-        //add function
-
-        //subtract function
-
-        //multiply function
-
-        //divide function
-
-        //clear/reset function
-
-
-    </script>
 </body>
 
 </html>
