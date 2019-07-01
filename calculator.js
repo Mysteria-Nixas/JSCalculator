@@ -7,6 +7,7 @@ var previousOperation = "";
 function doKeyAction(e) {
     Switch(e, document.getElementById('numberInput').value);
     console.log("Which: " + e.which + " KeyCode: " + e.keyCode);
+    FocusCursor();
 }
 
 $(document).keydown(function (e) {

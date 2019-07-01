@@ -20,7 +20,7 @@
     height: 410px;
     overflow: auto;
     padding: 5px;
-    background-image: url("IMG_0810.JPG");
+    background-image: url("redNblack background.jpg");
     border:2px solid black;
     text-align:center;
 }
@@ -47,7 +47,8 @@
 }
 .numberButton,
 .operatorButton,
-.decimalButton{
+.decimalButton,
+.clearButton{
     width:60px;
     height:50px;
     
@@ -70,7 +71,8 @@
 .operatorButton,
 .decimalButton,
 .number0Button,
-.equalsButton{
+.equalsButton,
+.clearButton{
     background-color:#3c3c3c;
     color:#fff;
     font-weight:normal;
@@ -80,8 +82,9 @@
 .operatorButton:hover,
 .decimalButton:hover,
 .number0Button:hover,
-.equalsButton:hover{
-    background-color:rgba(0,0,0,0.7);
+.equalsButton:hover,
+.clearButton:hover{
+    background-color:rgba(0,0,0,0.5);
 
 }
 
@@ -89,7 +92,8 @@
 .operatorButton:active,
 .decimalButton:active,
 .number0Button:active,
-.equalsButton:active{
+.equalsButton:active,
+.clearButton:active{
     background-color:rgba(0,0,0,1);
 
 }
