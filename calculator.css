@@ -20,8 +20,9 @@
     height: 410px;
     overflow: auto;
     padding: 5px;
-    background-image: url("IMG_0810.JPG");
-    border:2px solid black;
+    background-image: url("redNblack background.jpg");
+    border:2px inset rgb(73, 7, 7);
+    border-radius: 10px;
     text-align:center;
 }
 
