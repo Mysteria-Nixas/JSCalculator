@@ -12,66 +12,68 @@
 
 <body class="wholePage">
     <div class="wrapper">
-        <div class="block">
-            <textarea class="answer" id="answer" rows="3" cols="40" readonly="readonly"></textarea>
-        </div>
-
-        <div class="block">
-            <input type="text" class="numberInput" id="numberInput" onkeypress="doKeyAction(event)" />
-        </div>
-        <div class="buttonWrapper">
+        <form id="calculatorForm">
             <div class="block">
-                <button type="button" class="operatorButton" id="addButton">+</button>
-                <!--43-->
-                <button type="button" class="operatorButton" id="subtractButton">-</button>
-                <!--45-->
-                <button type="button" class="operatorButton" id="divideButton">/</button>
-                <!--47-->
-                <button type="button" class="operatorButton" id="multiplyButton">*</button>
-                <!--42-->
+                <textarea class="answer" id="answer" rows="3" cols="40" readonly="readonly"></textarea>
             </div>
-            <div class="numberWrapper">
+
+            <div class="block">
+                <input type="text" class="numberInput" id="numberInput" readonly="readonly" />  <!--onkeypress="doKeyAction(event)" />-->
+            </div>
+            <div class="buttonWrapper">
                 <div class="block">
-                    <button type="button" class="numberButton" id="7">7</button>
-                    <!--51-->
-                    <button type="button" class="numberButton" id="8">8</button>
-                    <!--50-->
-                    <button type="button" class="numberButton" id="9">9</button>
-                    <!--49-->
+                    <button type="button" class="operatorButton" id="addButton">+</button>
+                    <!--43-->
+                    <button type="button" class="operatorButton" id="subtractButton">-</button>
+                    <!--45-->
+                    <button type="button" class="operatorButton" id="divideButton">/</button>
+                    <!--47-->
+                    <button type="button" class="operatorButton" id="multiplyButton">*</button>
+                    <!--42-->
                 </div>
-                <div class="block">
-                    <button type="button" class="numberButton" id="4">4</button>
-                    <!--54-->
-                    <button type="button" class="numberButton" id="5">5</button>
-                    <!--53-->
-                    <button type="button" class="numberButton" id="6">6</button>
-                    <!--52-->
+                <div class="numberWrapper">
+                    <div class="block">
+                        <button type="button" class="numberButton" id="7">7</button>
+                        <!--51-->
+                        <button type="button" class="numberButton" id="8">8</button>
+                        <!--50-->
+                        <button type="button" class="numberButton" id="9">9</button>
+                        <!--49-->
+                    </div>
+                    <div class="block">
+                        <button type="button" class="numberButton" id="4">4</button>
+                        <!--54-->
+                        <button type="button" class="numberButton" id="5">5</button>
+                        <!--53-->
+                        <button type="button" class="numberButton" id="6">6</button>
+                        <!--52-->
+                    </div>
+                    <div class="block">
+                        <button type="button" class="numberButton" id="1">1</button>
+                        <!--57-->
+                        <button type="button" class="numberButton" id="2">2</button>
+                        <!--56-->
+                        <button type="button" class="numberButton" id="3">3</button>
+                        <!--55-->
+                    </div>
                 </div>
-                <div class="block">
-                    <button type="button" class="numberButton" id="1">1</button>
-                    <!--57-->
-                    <button type="button" class="numberButton" id="2">2</button>
-                    <!--56-->
-                    <button type="button" class="numberButton" id="3">3</button>
-                    <!--55-->
+                <div class="equalWrapper">
+                    <div class="block">
+                        <button type="button" class="equalsButton" id="equalsButton">=</button>
+                        <!--13-->
+                    </div>
+                </div>
+                <div class bottomRowWrapper>
+                    <div class="block">
+                        <button type="button" class="number0Button" id="0">0</button>
+                        <!--48-->
+                        <button type="button" class="decimalButton" id="decimalButton">.</button>
+                        <!--46 = .-->
+                        <button type="button" class="clearButton" id="0">C</button>
+                    </div>
                 </div>
             </div>
-            <div class="equalWrapper">
-                <div class="block">
-                    <button type="button" class="equalsButton" id="equalsButton">=</button>
-                    <!--13-->
-                </div>
-            </div>
-            <div class bottomRowWrapper>
-                <div class="block">
-                    <button type="button" class="number0Button" id="0">0</button>
-                    <!--48-->
-                    <button type="button" class="decimalButton" id="decimalButton">.</button>
-                    <!--46 = .-->
-                    <button type="button" class="clearButton" id="0">C</button>
-                </div>
-            </div>
-        </div>
+        </form>
     </div>
     <script src="calculator.js"></script>
 
