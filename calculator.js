@@ -1,7 +1,7 @@
 const total = document.getElementById('answer');
 const numberInputField = document.getElementById('numberInput');
-var answer = 0;
-var previousOperation = "";
+var answer = +0;
+var previousOperation;
 
 //global functions
 //function doKeyAction(e) {
@@ -20,6 +20,22 @@ $(document).keypress(function (e) {
     FocusCursor();
 });
 
+function UpdateInputField(key) {
+    numberInputField.value += key;
+}
+
+function InsertDecimal(key) {
+    var decimalInput = '/^[-+]?[0-9]+\.[0-9]+$/';
+    //if (numberInputField.indexOf('.') > -1) {
+    if (numberInputField.value.match(decimalInput)) {
+        //do nothing
+    }
+    else {
+        //do nothing
+        numberInputField.value += key;
+    }
+}
+
 //KeyboardEvent.code list of values https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent/keyCode
 //Keyboard code list of keys https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent/code
 function Switch(e, numberInput) {
@@ -27,57 +43,57 @@ function Switch(e, numberInput) {
     var key = e.key;
     switch (key) {
         case '1':
-            numberInputField.value += 1;
+            UpdateInputField(key);
             console.log(key);
             //do 1
             break;
         case '2':
-            numberInputField.value += 2;
+            UpdateInputField(key);
             console.log(key);
             //do 1
             break;
         case '3':
-            numberInputField.value += 3;
+            UpdateInputField(key);
             console.log(key);
             //do 1
             break;
         case '4':
-            numberInputField.value += 4;
+            UpdateInputField(key);
             console.log(key);
             //do 1
             break;
         case '5':
-            numberInputField.value += 5;
+            UpdateInputField(key);
             console.log(key);
             //do 1
             break;
         case '6':
-            numberInputField.value += 6;
+            UpdateInputField(key);
             console.log(key);
             //do 1
             break;
         case '7':
-            numberInputField.value += 7;
+            UpdateInputField(key);
             console.log(key);
             //do 1
             break;
         case '8':
-            numberInputField.value += 8;
+            UpdateInputField(key);
             console.log(key);
             //do 1
             break;
         case '9':
-            numberInputField.value += 9;
+            UpdateInputField(key);
             console.log(key);
             //do 1
             break;
         case '0':
-            numberInputField.value += 0;
+            UpdateInputField(key);
             console.log(key);
             //do 1
             break;
         case '.':
-            numberInputField.value += '.';
+            InsertDecimal(key);
             console.log(key);
             //do 1
             break;
@@ -302,6 +318,7 @@ function Add(numberInput) {
     total.value += +numberInput + " + ";
     answer = +answer + +numberInput;
     UpdateAnswer(answer);
+    previousOperation = "Add";
     FocusCursorAndClearInput();
 }
 
@@ -310,6 +327,7 @@ function Subtract(numberInput) {
     total.value += numberInput + " - ";
     answer = +answer - +numberInput;
     UpdateAnswer(answer);
+    previousOperation = "Subtract";
     FocusCursorAndClearInput();
 }
 
@@ -318,6 +336,7 @@ function Multiply(numberInput) {
     total.value += numberInput + " * ";
     answer = +answer * +numberInput;
     UpdateAnswer(answer);
+    previousOperation = "Multiply";
     FocusCursorAndClearInput();
 }
 
@@ -326,6 +345,7 @@ function Divide(numberInput) {
     total.value += numberInput + " / ";
     answer = +answer / +numberInput;
     UpdateAnswer(answer);
+    previousOperation = "Divide";
     FocusCursorAndClearInput();
 }
 
@@ -334,16 +354,20 @@ function Equals(numberInput) {
     //perform the final operation before updating the answer
     switch (previousOperation) {
         case "Add":
-            Add(numberInput);
+            total.value += +numberInput;
+            answer = +answer + +numberInput;
             break;
         case "Subtract":
-            Subtract(numberInput);
+            total.value += +numberInput;
+            answer = +answer - +numberInput;
             break;
         case "Multiply":
-            Multiply(numberInput);
+            total.value += numberInput;
+            answer = +answer * +numberInput;
             break;
         case "Divide":
-            Divide(numberInput);
+            total.value += numberInput;
+            answer = +answer / +numberInput;
             break;
 
     }
@@ -351,6 +375,7 @@ function Equals(numberInput) {
     //UpdateAnswer(answer); 
     total.value += " = " + answer;
     FocusCursorAndClearInput();
+    numberInputField.value = answer;
 }
 
 //update the running total so when the Equals function is called, it has the last value entered included in the calculation
