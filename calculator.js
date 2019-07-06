@@ -386,9 +386,6 @@ function UpdateAnswer(a) {
 //clear/reset function
 function ClearInput() {
     $('#numberInput').val('');
-    //var input = document.getElementById('numberInput');
-    //input.value = '';
-    ////document.getElementById('calculatorForm').reset();
 }
 
 //put the cursor in the input text box
