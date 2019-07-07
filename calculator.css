@@ -21,7 +21,8 @@
     overflow: auto;
     padding: 5px;
     background-image: url("redNblack background.jpg");
-    border:2px solid black;
+
+    border:2px inset #420100;
     text-align:center;
 }
 
