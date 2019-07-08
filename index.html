@@ -23,10 +23,18 @@
             </div>
             <div class="buttonWrapper">
                 <div class="block">
-                    <button type="button" class="operatorButton" id="addButton" onclick="Add(document.getElementById('numberInput').value)">+</button>
-                    <button type="button" class="operatorButton" id="subtractButton" onclick="Subtract(document.getElementById('numberInput').value)">-</button>
-                    <button type="button" class="operatorButton" id="divideButton" onclick="Divide(document.getElementById('numberInput').value)">/</button>
-                    <button type="button" class="operatorButton" id="multiplyButton" onclick="Multiply(document.getElementById('numberInput').value)">*</button>
+                    <button type="button" class="operatorButton" id="addButton" onclick="Add(document.getElementById('numberInput').value)">
+                        <i class="fas fa-plus"></i>
+                    </button>
+                    <button type="button" class="operatorButton" id="subtractButton" onclick="Subtract(document.getElementById('numberInput').value)">
+                        <i class="fas fa-minus"></i>
+                    </button>
+                    <button type="button" class="operatorButton" id="divideButton" onclick="Divide(document.getElementById('numberInput').value)">
+                        <i class="fas fa-divide"></i>
+                    </button>
+                    <button type="button" class="operatorButton" id="multiplyButton" onclick="Multiply(document.getElementById('numberInput').value)">
+                        <i class="fas fa-times"></i>
+                    </button>
                 </div>
                 <div class="numberWrapper">
                     <div class="block">
@@ -47,7 +55,9 @@
                 </div>
                 <div class="equalWrapper">
                     <div class="block">
-                        <button type="button" class="equalsButton" id="equalsButton" onclick="Equals(document.getElementById('numberInput').value)">=</button>
+                        <button type="button" class="equalsButton" id="equalsButton" onclick="Equals(document.getElementById('numberInput').value)">
+                            <i class="fas fa-equals"></i>
+                        </button>
                     </div>
                 </div>
                 <div class="bottomRowWrapper">
